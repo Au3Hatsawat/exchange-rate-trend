@@ -32,6 +32,6 @@
   - อนุมัติโดย: `@Au3Hatsawat (Hatsawat Intrasod)` เมื่อ `2026-11-04`
 - [ ] **Stage D:** การตรวจรับ QA (2 กอง) — รายงาน: [`qa-report.md`](qa-report.md)
   - [x] กอง Agent 🤖: ชุดเทสอัตโนมัติผ่าน 100% (55/55 passed, 97.52% coverage, 0 analyze issues)
-  - [ ] 🛑 **กองมนุษย์ 🙋:** ยืนยันผลการทดสอบมือ (QA-1 ถึง QA-4)
-    - ผู้ทดสอบ: รอดำเนินการโดย `@Au3Hatsawat`
-- [ ] **ส่งมอบ:** Mark Ready for review บน GitHub PR
+  - [x] 🛑 **กองมนุษย์ 🙋:** ยืนยันผลการทดสอบมือ (QA-1 ถึง QA-4)
+    - ผู้ทดสอบ: `@Au3Hatsawat (Hatsawat Intrasod)` เมื่อ `2026-11-04`
+- [x] **ส่งมอบ:** Mark Ready for review บน GitHub PR (PR #6)
