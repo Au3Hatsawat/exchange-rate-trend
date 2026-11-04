@@ -1,0 +1,37 @@
+# สถานะใบงาน: #3 — [FE] Develop: หน้าจอแสดงกราฟแนวโน้มอัตราแลกเปลี่ยนและสถิติ (Screen 15-1 & 15-1a)
+
+- **กิ่งงาน (Branch):** `feat/3-trend-chart-screen`
+- **ฐานงาน (Base Commit):** `cc2336ae7faa155b5758159d4469eea075922aec`
+- **ผู้รับผิดชอบ (Owner):** `@Au3Hatsawat`
+- **อ้างอิง Issue:** https://github.com/Au3Hatsawat/exchange-rate-trend/issues/3
+
+---
+
+## ความคืบหน้าของขั้นตอน (Pipeline Progress)
+
+- [x] **Stage A:** แตกใบงานเป็น Workspec (`workspec-fe.md`, `workspec-be.md`)
+- [ ] **Stage B:** จัดทำสเปคเชิงเทคนิคและแผนการทดสอบ
+  - [ ] `codebase-scout` (สำรวจโค้ดเดิม)
+  - [ ] `spec-fe.md` (สเปคหน้าจอ)
+  - [ ] `spec-be.md` (สเปค API และข้อมูล)
+  - [ ] `contract-checker` (จุดบรรจบ 1 — ตรวจสัญญา 7 มิติ)
+  - [ ] `testplan.md` (แผนเคสทดสอบ 🤖/👁️/🙋)
+  - [ ] `spec.md` (รวมสเปคฉบับสมบูรณ์)
+- [ ] 🛑 **✋ Gate 6 (อนุมัติสเปค):**
+  - อนุมัติโดย: ยังไม่อนุมัติ
+- [ ] **Stage C:** การพัฒนาตามแนวทาง TDD
+  - [ ] เขียน Automated Test ให้พังก่อน (`test-author`)
+  - [ ] เขียนโค้ดแอปให้เทสผ่าน (`implementer`)
+  - [ ] ปรับโครงสร้างโค้ด Refactor (`implementer`)
+  - [ ] ตรวจสอบ Coverage และ AC (`test-reviewer`)
+- [ ] **จุดบรรจบ 2:** รวมโค้ดสองฝั่งและรัน End-to-End Tests
+- [ ] **🤖 AI Pre-review:** ตรวจและแก้ไขข้อบกพร่องอัตโนมัติ (ไม่เกิน 3 รอบ)
+  - รอบ 1: แก้ไขแล้ว / คงเหลือ
+- [ ] 🛑 **✋ Gate 7 (อนุมัติโค้ด):**
+  - ตรวจทานบน PR: Draft PR
+  - อนุมัติโดย: ยังไม่อนุมัติ
+- [ ] **Stage D:** การตรวจรับ QA (2 กอง)
+  - [ ] กอง Agent 🤖: ชุดเทสอัตโนมัติผ่าน 100%
+  - [ ] 🛑 **กองมนุษย์ 🙋:** ยืนยันผลการทดสอบมือ
+    - ผู้ทดสอบ: รอดำเนินการ
+- [ ] **ส่งมอบ:** Mark Ready for review บน GitHub PR
