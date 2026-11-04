@@ -113,8 +113,12 @@ void main() {
           ),
         );
 
-        // Assert: ตรวจพบข้อความและไอคอนลิงก์ภายนอกตาม FR-8 / AC-6
-        expect(find.text('ข้อมูลจาก Frankfurter API'), findsOneWidget);
+        // Assert: ตรวจพบข้อความและไอคอนตาม Figma EL-fb0e5f3d
+        expect(
+          find.text('อัตราแลกเปลี่ยนจาก Frankfurter (frankfurter.dev)'),
+          findsOneWidget,
+        );
+        expect(find.byIcon(Icons.info_outline), findsOneWidget);
         expect(find.byIcon(Icons.open_in_new), findsOneWidget);
         expect(find.byType(InkWell), findsOneWidget);
       },

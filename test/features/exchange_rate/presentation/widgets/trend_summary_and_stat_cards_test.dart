@@ -25,11 +25,11 @@ void main() {
           ),
         );
 
-        // Assert: แสดงข้อความช่วงวัน, ตัวเลขเปอร์เซ็นต์บวก, ป้าย "สูงขึ้น" และไอคอนลูกศรขึ้น
+        // Assert: แสดงข้อความช่วงวัน, ตัวเลขเปอร์เซ็นต์บวก, ป้าย "สูงขึ้น" และไอคอนแนวโน้มขึ้น
         expect(find.text('เปลี่ยนแปลง 30 วัน'), findsOneWidget);
         expect(find.text('+0.54%'), findsOneWidget);
         expect(find.text('สูงขึ้น'), findsOneWidget);
-        expect(find.byIcon(Icons.arrow_upward), findsOneWidget);
+        expect(find.byIcon(Icons.trending_up), findsOneWidget);
       },
     );
 
@@ -54,7 +54,7 @@ void main() {
         expect(find.text('เปลี่ยนแปลง 7 วัน'), findsOneWidget);
         expect(find.text('-0.44%'), findsOneWidget);
         expect(find.text('ลดลง'), findsOneWidget);
-        expect(find.byIcon(Icons.arrow_downward), findsOneWidget);
+        expect(find.byIcon(Icons.trending_down), findsOneWidget);
 
         // 2. เคสทรงตัว: 90 วัน, 0.00%, ทิศทางทรงตัว
         await tester.pumpWidget(

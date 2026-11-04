@@ -49,7 +49,8 @@ void main() {
         await tester.pumpAndSettle();
 
         // Assert: ตรวจสอบองค์ประกอบตาม AC-1 และ AC-2
-        expect(find.text('แนวโน้มอัตราแลกเปลี่ยน'), findsOneWidget); // AppBar
+        expect(find.text('แนวโน้มอัตรา'), findsOneWidget); // AppBar (Figma EL-0c3cf6b7)
+        expect(find.text('คู่สกุล'), findsOneWidget); // Currency Selector Label
         expect(find.text('USD → THB'), findsOneWidget); // Currency Selector
         expect(find.text('30 วัน'), findsOneWidget); // Period tab
         expect(find.text('+0.54%'), findsOneWidget); // AC-2 Benchmark %
@@ -57,7 +58,7 @@ void main() {
         expect(find.text('33.750'), findsOneWidget); // Max Stat Card
         expect(find.text('33.568'), findsOneWidget); // Min Stat Card
         expect(
-          find.text('ข้อมูลจาก Frankfurter API'),
+          find.text('อัตราแลกเปลี่ยนจาก Frankfurter (frankfurter.dev)'),
           findsOneWidget,
         ); // Source note
       },
@@ -169,9 +170,13 @@ void main() {
 
         await tester.pumpAndSettle();
 
-        // Assert: ปรากฏแถวข้อมูล Screen 15-1a แสดง "10 ต.ค. · 33.570" และ "THB"
-        expect(find.text('10 ต.ค. · 33.570'), findsOneWidget);
+        // Assert: ปรากฏแถวข้อมูล Screen 15-1a แสดงวันที่ 10 ต.ค., เรต 33.570 และ THB
+        expect(find.textContaining('10 ต.ค.'), findsOneWidget);
+        expect(find.text('33.570'), findsOneWidget);
         expect(find.text('THB'), findsOneWidget);
+        // ตรวจว่าในโหมด 15-1a สลับซ่อน Stat Cards ตาม Figma 1:459
+        expect(find.text('สูงสุด'), findsNothing);
+        expect(find.text('ต่ำสุด'), findsNothing);
       },
     );
 

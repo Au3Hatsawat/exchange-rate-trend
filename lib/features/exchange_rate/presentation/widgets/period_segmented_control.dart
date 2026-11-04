@@ -41,9 +41,9 @@ class PeriodSegmentedControl extends StatelessWidget {
                   boxShadow: isSelected
                       ? const [
                           BoxShadow(
-                            color: Color.fromRGBO(0, 0, 0, 0.04),
-                            blurRadius: 4.0,
-                            offset: Offset(0, 2),
+                            color: Color.fromRGBO(0, 0, 0, 0.08),
+                            blurRadius: 2.0,
+                            offset: Offset(0, 1),
                           ),
                         ]
                       : null,
@@ -53,9 +53,9 @@ class PeriodSegmentedControl extends StatelessWidget {
                   '$days วัน',
                   style: AppTypography.labelSmall.copyWith(
                     color: isSelected
-                        ? AppColors.brandPrimary
+                        ? AppColors.textPrimary
                         : AppColors.textSecondary,
-                    fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
+                    fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
                   ),
                 ),
               ),

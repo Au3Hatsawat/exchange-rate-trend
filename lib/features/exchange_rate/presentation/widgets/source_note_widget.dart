@@ -27,10 +27,17 @@ class SourceNoteWidget extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
+              const Icon(
+                Icons.info_outline,
+                size: 16.0,
+                color: AppColors.textSecondary,
+              ),
+              const SizedBox(width: 6.0),
               Flexible(
                 child: Text(
-                  'ข้อมูลจาก Frankfurter API',
+                  'อัตราแลกเปลี่ยนจาก Frankfurter (frankfurter.dev)',
                   style: AppTypography.bodySmall.copyWith(
+                    fontSize: 12.0,
                     color: AppColors.textSecondary,
                   ),
                   overflow: TextOverflow.ellipsis,
@@ -40,7 +47,7 @@ class SourceNoteWidget extends StatelessWidget {
               const Icon(
                 Icons.open_in_new,
                 size: 14.0,
-                color: AppColors.brandPrimary,
+                color: AppColors.textSecondary,
               ),
             ],
           ),

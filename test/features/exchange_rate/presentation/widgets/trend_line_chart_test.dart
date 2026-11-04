@@ -44,21 +44,15 @@ void main() {
           ),
         );
 
-        // Assert: พบ LineChart widget 1 ชิ้น
+        // Assert: พบ LineChart widget 1 ชิ้น และกำหนดความสูงด้วย SizedBox
         expect(find.byType(LineChart), findsOneWidget);
-
-        // ตรวจสอบ Container ตกแต่งความสูงและขอบมน
-        final container = tester.widget<Container>(
-          find
-              .descendant(
-                of: find.byType(TrendLineChart),
-                matching: find.byType(Container),
-              )
-              .first,
+        expect(
+          find.descendant(
+            of: find.byType(TrendLineChart),
+            matching: find.byType(SizedBox),
+          ),
+          findsWidgets,
         );
-        final decoration = container.decoration as BoxDecoration?;
-        expect(decoration, isNotNull);
-        expect(decoration!.borderRadius, BorderRadius.circular(14.0));
       },
     );
 

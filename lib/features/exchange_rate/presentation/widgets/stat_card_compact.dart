@@ -11,8 +11,11 @@ class StatCardCompact extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMax = label == 'สูงสุด';
+    final iconData = isMax ? Icons.trending_up : Icons.trending_down;
+
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 14.0),
+      padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
         color: AppColors.bgSurface,
         borderRadius: BorderRadius.circular(14.0),
@@ -21,8 +24,20 @@ class StatCardCompact extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(label, style: AppTypography.bodySmall),
-          const SizedBox(height: 4.0),
+          Row(
+            children: [
+              Icon(iconData, size: 16.0, color: AppColors.textSecondary),
+              const SizedBox(width: 8.0),
+              Text(
+                label,
+                style: AppTypography.bodySmall.copyWith(
+                  color: AppColors.textSecondary,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8.0),
           FittedBox(
             fit: BoxFit.scaleDown,
             alignment: Alignment.centerLeft,

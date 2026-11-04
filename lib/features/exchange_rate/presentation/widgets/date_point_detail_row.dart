@@ -12,36 +12,72 @@ class DatePointDetailRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final thaiDate = DateFormatter.formatThaiShortDate(point.date);
+    final thaiDate =
+        '${DateFormatter.formatThaiShortDate(point.date)} ${point.date.year}';
     final rateStr = point.rate.toStringAsFixed(3);
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 10.0),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
       decoration: BoxDecoration(
-        color: AppColors.bgSubtle,
-        borderRadius: BorderRadius.circular(10.0),
+        color: AppColors.bgSurface,
+        borderRadius: BorderRadius.circular(14.0),
+        border: Border.all(color: AppColors.borderDefault, width: 1.0),
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min,
         children: [
-          Container(
-            width: 8.0,
-            height: 8.0,
-            decoration: const BoxDecoration(
-              color: AppColors.brandPrimary,
-              shape: BoxShape.circle,
+          const Icon(
+            Icons.schedule,
+            size: 22.0,
+            color: AppColors.textSecondary,
+          ),
+          const SizedBox(width: 12.0),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  thaiDate,
+                  style: AppTypography.bodyDefault.copyWith(
+                    color: AppColors.textPrimary,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                const SizedBox(height: 2.0),
+                Text(
+                  '1 ${point.base}',
+                  style: AppTypography.bodySmall.copyWith(
+                    color: AppColors.textSecondary,
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
             ),
           ),
           const SizedBox(width: 8.0),
-          Text(
-            '$thaiDate · $rateStr',
-            style: AppTypography.bodyDefault.copyWith(
-              fontWeight: FontWeight.w600,
-              color: AppColors.textPrimary,
-            ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                rateStr,
+                style: AppTypography.heading.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.textPrimary,
+                ),
+              ),
+              Text(
+                point.quote,
+                style: AppTypography.bodySmall.copyWith(
+                  fontSize: 12.0,
+                  color: AppColors.textSecondary,
+                ),
+              ),
+            ],
           ),
-          const SizedBox(width: 6.0),
-          Text(point.quote, style: AppTypography.bodySmall),
         ],
       ),
     );

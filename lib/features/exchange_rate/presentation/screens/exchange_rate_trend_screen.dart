@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_typography.dart';
 import '../providers/exchange_rate_provider.dart';
 import '../providers/exchange_rate_state.dart';
 import '../widgets/currency_selector_card.dart';
@@ -38,7 +40,23 @@ class _ExchangeRateTrendScreenState
     final notifier = ref.read(exchangeRateNotifierProvider.notifier);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('แนวโน้มอัตราแลกเปลี่ยน')),
+      appBar: AppBar(
+        title: Text(
+          'แนวโน้มอัตรา',
+          style: AppTypography.heading,
+        ),
+        backgroundColor: AppColors.bgSurface,
+        elevation: 0.0,
+        scrolledUnderElevation: 0.0,
+        bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(1.0),
+          child: Divider(
+            height: 1.0,
+            thickness: 1.0,
+            color: AppColors.bgSubtle,
+          ),
+        ),
+      ),
       body: SafeArea(
         child: Align(
           alignment: Alignment.topCenter,
@@ -50,7 +68,7 @@ class _ExchangeRateTrendScreenState
                 physics: const AlwaysScrollableScrollPhysics(),
                 padding: const EdgeInsets.symmetric(
                   horizontal: 16.0,
-                  vertical: 12.0,
+                  vertical: 16.0,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -62,7 +80,7 @@ class _ExchangeRateTrendScreenState
                         // เตรียมสำหรับเชื่อมต่อ Screen 15-2 ใน Issue ถัดไป
                       },
                     ),
-                    const SizedBox(height: 12.0),
+                    const SizedBox(height: 16.0),
 
                     // FR-3: Period Segmented Control (7, 30, 90 วัน)
                     PeriodSegmentedControl(
@@ -122,36 +140,35 @@ class _ExchangeRateTrendScreenState
               selectedPoint: state.selectedPoint,
               onPointSelected: (point) => notifier.selectPoint(point),
             ),
-            const SizedBox(height: 8.0),
+            const SizedBox(height: 16.0),
 
-            // FR-7 (Screen 15-1a): แถวแสดงวันที่และเรตเมื่อแตะจุด
+            // FR-7 (Screen 15-1a): เมื่อแตะจุดบนกราฟ จะสลับมาแสดง Data Row ของจุดที่แตะแทน Stat Row และ Level Badge ตาม Figma 1:459
             if (state.selectedPoint != null) ...[
               DatePointDetailRow(point: state.selectedPoint!),
-              const SizedBox(height: 12.0),
             ] else ...[
-              const SizedBox(height: 12.0),
+              // Screen 15-1: 2 Stat Cards แนวนอน (สูงสุด / ต่ำสุด)
+              Row(
+                children: [
+                  Expanded(
+                    child: StatCardCompact(label: 'สูงสุด', rate: trend.maxRate),
+                  ),
+                  const SizedBox(width: 12.0),
+                  Expanded(
+                    child: StatCardCompact(label: 'ต่ำสุด', rate: trend.minRate),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16.0),
+
+              // Screen 15-1: Trend Summary Data Row + Level Badge
+              TrendSummaryRow(
+                days: state.selectedDays,
+                changePercentage: trend.changePercentage,
+                direction: trend.trendDirection,
+                firstRate: trend.firstRate,
+                lastRate: trend.lastRate,
+              ),
             ],
-
-            // FR-5: 2 Stat Cards แนวนอน (สูงสุด / ต่ำสุด)
-            Row(
-              children: [
-                Expanded(
-                  child: StatCardCompact(label: 'สูงสุด', rate: trend.maxRate),
-                ),
-                const SizedBox(width: 12.0),
-                Expanded(
-                  child: StatCardCompact(label: 'ต่ำสุด', rate: trend.minRate),
-                ),
-              ],
-            ),
-            const SizedBox(height: 12.0),
-
-            // FR-6: Trend Summary Data Row (% และ Level Badge)
-            TrendSummaryRow(
-              days: state.selectedDays,
-              changePercentage: trend.changePercentage,
-              direction: trend.trendDirection,
-            ),
           ],
         );
     }

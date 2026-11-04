@@ -16,11 +16,11 @@ abstract final class AppTheme {
       ),
       fontFamily: GoogleFonts.ibmPlexSansThai().fontFamily,
       appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.bgScreen,
+        backgroundColor: AppColors.bgSurface,
         elevation: 0.0,
         scrolledUnderElevation: 0.0,
         centerTitle: false,
-        titleTextStyle: AppTypography.title,
+        titleTextStyle: AppTypography.heading,
         iconTheme: const IconThemeData(color: AppColors.textPrimary),
       ),
       cardTheme: CardThemeData(

@@ -26,4 +26,13 @@ abstract final class AppColors {
   static const Color statusDownSubtle = Color(0xFFFEECEC);
   static const Color statusNeutral = Color(0xFF525C6A);
   static const Color statusNeutralSubtle = Color(0xFFF1F3F5);
+
+  // Figma Trend & Badge Semantic Colors
+  static const Color chartSeries = Color(0xFFEA580C);
+  static const Color badgeInfoBg = Color(0xFFEFF8FF);
+  static const Color badgeInfoText = Color(0xFF0369A1);
+  static const Color badgeDownBg = Color(0xFFFEF2F2);
+  static const Color badgeDownText = Color(0xFFDC2626);
+  static const Color badgeNeutralBg = Color(0xFFF1F5F9);
+  static const Color badgeNeutralText = Color(0xFF525C6A);
 }

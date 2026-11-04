@@ -27,6 +27,9 @@ class ExchangeRateTrend extends Equatable {
     required this.trendDirection,
   });
 
+  double? get firstRate => points.isNotEmpty ? points.first.rate : null;
+  double? get lastRate => points.isNotEmpty ? points.last.rate : null;
+
   @override
   List<Object?> get props => [
         pair,
