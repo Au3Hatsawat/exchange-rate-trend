@@ -161,7 +161,7 @@ test/
 - [x] จัดทำสเปคเทคนิคเชิงลึกครบทั้ง 2 เลเยอร์ (`spec-fe.md`, `spec-be.md`)
 - [x] ตรวจสอบสัญญา 7 มิติ ผ่าน 100% ไร้ข้อขัดแย้ง (`contract-report.md`)
 - [x] จัดทำแผนเคสทดสอบและ Traceability Matrix ครบทุก AC (`testplan.md`)
-- [ ] 🛑 **✋ Gate 6 (Tech Lead Approval):** รอการตรวจรับและอนุมัติจาก Tech Lead (@Au3Hatsawat)
+- [x] 🛑 **✋ Gate 6 (Tech Lead Approval):** อนุมัติโดย: `@Au3Hatsawat (Hatsawat Intrasod)` เมื่อ `2026-11-04`
 
 ---
 

@@ -17,13 +17,13 @@
   - [x] `contract-checker` (จุดบรรจบ 1 — ตรวจสัญญา 7 มิติ)
   - [x] `testplan.md` (แผนเคสทดสอบ 🤖/👁️/🙋)
   - [x] `spec.md` (รวมสเปคฉบับสมบูรณ์)
-- [ ] 🛑 **✋ Gate 6 (อนุมัติสเปค):**
-  - อนุมัติโดย: ยังไม่อนุมัติ
-- [ ] **Stage C:** การพัฒนาตามแนวทาง TDD
-  - [ ] เขียน Automated Test ให้พังก่อน (`test-author`)
-  - [ ] เขียนโค้ดแอปให้เทสผ่าน (`implementer`)
-  - [ ] ปรับโครงสร้างโค้ด Refactor (`implementer`)
-  - [ ] ตรวจสอบ Coverage และ AC (`test-reviewer`)
+- [x] 🛑 **✋ Gate 6 (อนุมัติสเปค):**
+  - อนุมัติโดย: `@Au3Hatsawat (Hatsawat Intrasod)` เมื่อ `2026-11-04`
+- [x] **Stage C:** การพัฒนาตามแนวทาง TDD
+  - [x] เขียน Automated Test ให้พังก่อน (`test-author`)
+  - [x] เขียนโค้ดแอปให้เทสผ่าน (`implementer`)
+  - [x] ปรับโครงสร้างโค้ด Refactor (`implementer`)
+  - [x] ตรวจสอบ Coverage และ AC (`test-reviewer`)
 - [ ] **จุดบรรจบ 2:** รวมโค้ดสองฝั่งและรัน End-to-End Tests
 - [ ] **🤖 AI Pre-review:** ตรวจและแก้ไขข้อบกพร่องอัตโนมัติ (ไม่เกิน 3 รอบ)
   - รอบ 1: แก้ไขแล้ว / คงเหลือ
