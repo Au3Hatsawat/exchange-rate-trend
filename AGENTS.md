@@ -21,9 +21,15 @@
 
 - **Repository:** `Au3Hatsawat/exchange-rate-trend`
 - **Main Branch:** `main`
-- **เทคสแตกหลัก:** `Flutter (Clean Architecture + Riverpod / BLoC)`
+- **เทคสแตกหลัก:** `Flutter (Clean Architecture + Riverpod + Dio + fl_chart)`
 - **ที่เก็บเอกสารของใบงาน:** `docs/workspecs/<ISSUE-KEY>/`
 - **ที่เก็บรายงาน Code Review:** `docs/code-review/`
+- **เอกสาร Project SDD:**
+  - [`docs/sdd/01-tech-stack.md`](docs/sdd/01-tech-stack.md): เทคสแตก, แพ็กเกจ และเครื่องมือ
+  - [`docs/sdd/02-architecture-layout.md`](docs/sdd/02-architecture-layout.md): โครงสร้างโฟลเดอร์ Clean Architecture และกฎเลเยอร์
+  - [`docs/sdd/03-api-contract.md`](docs/sdd/03-api-contract.md): สัญญา API Frankfurter, Model DTO และ Caching
+  - [`docs/sdd/04-testing-guidelines.md`](docs/sdd/04-testing-guidelines.md): มาตรฐานการเขียน Unit/Widget Test ด้วย Mocktail
+  - [`docs/sdd/05-review-and-dod.md`](docs/sdd/05-review-and-dod.md): Checklist ตรวจโค้ด และ Definition of Done
 
 ---
 
